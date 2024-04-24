@@ -39,6 +39,7 @@ html {
 
 header {
   position: fixed;
+  z-index: 100;
   width: 100%;
   border-bottom: solid 1px #c6c1c1;
   background-color: white;
@@ -52,8 +53,6 @@ header .content {
 
 header .logo {
   flex: 1;
-  font-size: 24px;
-  font-family: "Roboto-Mono-Regular";
 }
 
 header nav ul {
@@ -70,7 +69,17 @@ nav a {
   line-height: 1.6;
   font-size: 1rem;
   color: #4a4a4a;
-  font-family: "Roboto-Regular";
+}
+
+nav .button {
+  padding: .1875rem .5rem;
+  background-color: #9dc20b;
+  line-height: 1.6;
+  color: white;
+}
+
+nav li:last-child {
+  display: none;
 }
 
 header .icon {
@@ -82,7 +91,17 @@ header .mobile {
   display: none;
 }
 
-@media only screen and (max-width: 760px) {
+@media only screen and (max-width: 895px) {
+  nav li:last-child {
+    display: block;
+  }
+
+  header .content {
+    padding: 1rem 1rem;
+  }
+}
+
+@media only screen and (max-width: 600px) {
   header .desktop {
     display: none;
   }
@@ -105,13 +124,6 @@ header .mobile {
 
   header .mobile li {
     padding: 0;
-  }
-
-  header .mobile .button {
-    padding: .1875rem .5rem;
-    background-color: #9dc20b;
-    line-height: 1.6;
-    color: white;
   }
 }
 
@@ -175,7 +187,7 @@ header .mobile {
   padding: 1.25rem 7.25rem;
 }
 
-@media only screen and (max-width: 760px) {
+@media only screen and (max-width: 895px) {
   #sign-up-section {
     align-items: center;
     justify-content: center;
@@ -207,7 +219,7 @@ header .mobile {
   }
 }
 
-@media only screen and (max-width: 450px) {
+@media only screen and (max-width: 600px) {
   #sign-up-section {
     height: 20rem;
   }
@@ -258,7 +270,14 @@ header .mobile {
   color: #4a4a4a;
 }
 
-@media only screen and (max-width: 890px) {
+@media only screen and (max-width: 895px) {
+  #features-section {
+    padding: 1rem;
+  }
+  .feature {
+    margin: 0px .5rem;
+    padding: 1rem;
+  }
   .feature h2 {
     font-size: 1.125rem;
     line-height: 1.3;
@@ -269,9 +288,13 @@ header .mobile {
     font-size: .875rem;
     line-height: 1.4;
   }
+
+  /* .image-container {
+    display: flex;
+  } */
 }
 
-@media only screen and (max-width: 760px) {
+@media only screen and (max-width: 600px) {
   #features-section {
     flex-flow: column;
     padding: 0;
@@ -280,6 +303,10 @@ header .mobile {
   .feature {
     margin: 0;
     padding: 1.25rem 1rem 0 1rem;
+  }
+
+  .feature .content {
+    padding: 1.25rem 0 1.875rem 0;
   }
 }
 
@@ -314,7 +341,7 @@ header .mobile {
   padding: 0 1%;
 }
 
-@media only screen and (max-width: 760px) {
+@media only screen and (max-width: 600px) {
   #filters-section {
     padding: 1.5rem 0 0 0;
   }
@@ -368,12 +395,12 @@ header .mobile {
   height: 1.875rem;
 }
 
-@media only screen and (max-width: 760px) {
+@media only screen and (max-width: 600px) {
   #quotes-section content {
     padding: 1.875rem .625rem;
   }
 
-  #quotes-section quote {
+  #quotes-section .quote {
     font-size: 1.5rem;
     line-height: 1.4;
   }
